@@ -12,7 +12,7 @@
         $Descripcion = $_POST['Descripcion'];
 
         //Cargamos el XML desde un archivo xml
-        $xml = simplexml_load_file('entradas_blog.xml');
+        $xml = simplexml_load_file('../xml/entradas_blog.xml');
 
         //ATENCION he intentado obtener el ultimo entrada_blog con [-1] para cojer directamente el ultimo nodo y con lastChild.
         //No lo he conseguido y no encuentro info en internet, asi que he obtenido la ultima posicion de la siguiente manera:
@@ -39,7 +39,7 @@
         $entrada_blog->addChild('descripcion',$Descripcion);
 
         //Guardamos la nueva entrada en el arxivo XML
-        file_put_contents('entradas_blog.xml',$xml->asXML());
+        file_put_contents('../xml/entradas_blog.xml',$xml->asXML());
 
         //Mostramos mensaje confirmando que se ha subido la entrada
         echo "Subido con exito!!";
