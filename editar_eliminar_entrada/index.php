@@ -18,12 +18,18 @@ for($i=$cuenta_entradas_blog-1;$i>=0;$i--){
     $resultados .= "<h1>".$entrada_blog[$i]->titulo."</h1>";
     $resultados .= "<span>Fecha envio:".$entrada_blog[$i]->fecha."</span>";
     $resultados .= "<p>".$entrada_blog[$i]->descripcion."</p>";
-    //Guardamos el id de la entrada, si le dan a eliminar se lo pasaremos por metodo POST para que lo elimine
-    $id_entrada = $entrada_blog[$i]->id;
+    //Creamos un form para eliminar una entrada, si le dan a eliminar pasaremos por metodo POST el id para que lo elimine del XML
     $resultados .= "<form method='POST' action='confirmar_eliminar.php'>";
-    $resultados .= "<input type='hidden' name='id_entrada' value='".$id_entrada."'>"; //Le pasamos el id a eliminar
+    $resultados .= "<input type='hidden' name='id_entrada' value='".$entrada_blog[$i]->id."'>"; //Le pasamos el id a eliminar
     $resultados .= "<input type='hidden' name='titulo_entrada' value='".$entrada_blog[$i]->titulo."'>"; //Le pasamos el titulo a eliminar
     $resultados .= "<input type='submit' name='confirmar_eliminar_entrada' value='Elimina esta entrada del blog'>";
+    $resultados .= "</form>";
+    //Creamos un form para editar una entrada, le pasamos los datos necesarios a editar_entrada.php, donde se podra modificar el texto y guardar cambios en el XML
+    $resultados .= "<form method='POST' action='editar_entrada.php'>";
+    $resultados .= "<input type='hidden' name='id_entrada' value='".$entrada_blog[$i]->id."'>"; //Le pasamos el id a editar
+    $resultados .= "<input type='hidden' name='titulo_entrada' value='".$entrada_blog[$i]->titulo."'>"; //Le pasamos el titulo a editar
+    $resultados .= "<input type='hidden' name='descripcion_entrada' value='".$entrada_blog[$i]->descripcion."'>"; //Le pasamos la descripcion a editar
+    $resultados .= "<input type='submit' name='editar_entrada' value='Edita esta entrada del blog'>";
     $resultados .= "</form>";
 }
 ?>
