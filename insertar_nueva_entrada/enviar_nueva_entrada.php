@@ -42,6 +42,6 @@
         file_put_contents('../xml/entradas_blog.xml',$xml->asXML());
 
         //Mostramos mensaje confirmando que se ha subido la entrada
-        echo "Subido con exito!!";
+        echo "<h1>Subido con exito!!</h1> <a href='index.html'><--Volver</a>";
     }
 ?>

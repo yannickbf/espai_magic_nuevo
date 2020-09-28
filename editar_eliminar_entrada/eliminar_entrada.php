@@ -30,6 +30,8 @@ if( isset($_POST['eliminar_entrada'])){
 
             //Guardamos los cambios en el archivo xml
             $doc->save('../xml/entradas_blog.xml');
+
+            echo "<h1>Eliminado con exito!!</h1> <a href='index.php'><--Volver</a>";
         }
     }
 }
