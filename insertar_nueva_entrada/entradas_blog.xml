@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<entradas_blog>
+    <entrada_blog>
+            <id>1</id>
+            <fecha>2012/04/30</fecha>
+            <titulo>Entrada1</titulo>
+            <descripcion>Descripcion de entrada 1</descripcion>
+    </entrada_blog>
+    <entrada_blog>
+            <id>2</id>
+            <fecha>2014/04/30</fecha>
+            <titulo>Entrada2</titulo>
+            <descripcion>Descripcion de entrada 2</descripcion>
+    </entrada_blog>
+</entradas_blog>
