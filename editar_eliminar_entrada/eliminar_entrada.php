@@ -3,6 +3,15 @@
 //Eliminamos la entrada del archivo XML buscando su id
 if( isset($_POST['eliminar_entrada'])){
 
+    //Cargamos XML
+    $xml = simplexml_load_file('../xml/entradas_blog.xml');
+
+    //Guardamos en una variable los nodos entrada_blog para recorrer sus subnodos
+    $entrada_blog = $xml->entrada_blog;
+
+    //Contamos cuantos nodos entrada_blog tenemos
+    $cuenta_entradas_blog = $xml->entrada_blog->count();
+
     //Guardamos en una variable el id que queremos eliminar
     $id_eliminar = $_POST['id_entrada_eliminar'];
     
@@ -11,5 +20,19 @@ if( isset($_POST['eliminar_entrada'])){
     $doc->load('../xml/entradas_blog.xml');
     //Guardamos en una variable el documento como documentElement
     $entradas = $doc->documentElement;
+
+    //Buscamos la entrada de blog que tenga el mismo id que se nos ha pasado y si tiene el mismo id eliminamos todo el nodo entrada_blog diciendole la posicion
+    for($i=0;$i<$cuenta_entradas_blog;$i++){
+        if($entrada_blog[$i]->id == $id_eliminar){
+            //Guardamos en una variable la entrada a eliminar y la eliminamos
+            $entrada_a_eliminar = $entradas->getElementsByTagName('entrada_blog')->item($i);
+            $eliminar_entrada = $entradas->removeChild($entrada_a_eliminar);
+
+            //Guardamos los cambios en el archivo xml
+            $doc->save('../xml/entradas_blog.xml');
+        }
+    }
 }
+
+
 ?>

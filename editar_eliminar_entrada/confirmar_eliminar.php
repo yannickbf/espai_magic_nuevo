@@ -21,5 +21,7 @@ if( isset($_POST['confirmar_eliminar_entrada'])){
         <input type='hidden' name='id_entrada_eliminar' value='<?php echo $id; ?>'>
         <input type='submit' name='eliminar_entrada' value='Si'>
     </form>
+    <br>
+    <a href="index.php"><<-Volver</a>
 </body>
 </html>
