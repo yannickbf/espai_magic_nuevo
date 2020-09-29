@@ -25,6 +25,9 @@
             //ATENCION he intentado obtener el ultimo entrada_blog con [-1] para cojer directamente el ultimo nodo y con lastChild.
             //No lo he conseguido y no encuentro info en internet, asi que he obtenido la ultima posicion de la siguiente manera:
 
+            //$id_ultimo_elemento_lastChild = $xml->lastChild->id;
+            //echo "hola ".$id_ultimo_elemento_lastChild;
+            
             //Contamos las entradas del nodo entrada_blog
             $contar_entradas_blog = $xml->entrada_blog->count();
 
