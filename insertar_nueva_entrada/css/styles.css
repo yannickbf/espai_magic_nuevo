@@ -1,5 +1,6 @@
 form {
     font-family: arial;
+    text-align: justify;
     margin: 20px;
     background-color: rgb(72, 151, 151);
     display: inline-block;
@@ -16,4 +17,7 @@ form textarea{
 }
 form h1{
     margin-top: 0;
+}
+a{
+ color: blue;
 }

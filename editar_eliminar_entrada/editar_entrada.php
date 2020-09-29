@@ -1,7 +1,10 @@
 <?php 
-if( isset($_POST['editar_entrada'])){
-
+if( isset($_POST['editar_entrada_blog'])){
+    $id = $_POST['id_entrada'];
+    $titulo = $_POST['titulo_entrada'];
+    $descripcion = $_POST['descripcion_entrada'];
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -13,10 +16,16 @@ if( isset($_POST['editar_entrada'])){
 </head>
 <body>
     <div class="contenedor_entrada_editar">
-        <form method='POST' action='eliminar_entrada.php'>
-            <input type='hidden' name='id_entrada_eliminar' value='<?php echo $id; ?>'>
-            <input type='submit' name='eliminar_entrada' value='Si'>
+        <form method='POST' action='guardar_cambios_edicion.php'>
+            <input type='hidden' name='id_entrada_guardar' value='<?php echo $id ?>'>
+            <label>Titulo:</label><br>
+            <input type='text' name='titulo_entrada_guardar' value='<?php echo $titulo; ?>'><br>
+            <label>Descripción:</label><br>
+            <textarea name='descripcion_entrada_guardar'><?php echo $descripcion ?></textarea>
+            <br><br>
+            <input type='submit' name='guardar_entrada' value='Guardar cambios'>
         </form>
     </div>
+    <a href="index.php"><--Volver</a>
 </body>
 </html>

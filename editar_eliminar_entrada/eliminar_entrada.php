@@ -21,9 +21,12 @@ if( isset($_POST['eliminar_entrada'])){
     //Guardamos en una variable el documento como documentElement
     $entradas = $doc->documentElement;
 
-    //Buscamos la entrada de blog que tenga el mismo id que se nos ha pasado y si tiene el mismo id eliminamos todo el nodo entrada_blog diciendole la posicion
-    for($i=0;$i<$cuenta_entradas_blog;$i++){
+    //Buscamos la entrada de blog que tenga el mismo id que se nos ha pasado y si tiene el mismo id eliminamos todo el nodo entrada_blog diciendole la posicion y detenemos el bucle
+    $seguir_buscando = true;
+    $i=0;
+    while($seguir_buscando){
         if($entrada_blog[$i]->id == $id_eliminar){
+
             //Guardamos en una variable la entrada a eliminar y la eliminamos
             $entrada_a_eliminar = $entradas->getElementsByTagName('entrada_blog')->item($i);
             $eliminar_entrada = $entradas->removeChild($entrada_a_eliminar);
@@ -31,7 +34,14 @@ if( isset($_POST['eliminar_entrada'])){
             //Guardamos los cambios en el archivo xml
             $doc->save('../xml/entradas_blog.xml');
 
+            //Mostramos mensaje eliminado con exito
             echo "<h1>Eliminado con exito!!</h1> <a href='index.php'><--Volver</a>";
+
+            //Pasamos $seguir_buscando a false para detener el bucle
+            $seguir_buscando = false;
+        }
+        else{
+            $i++;
         }
     }
 }

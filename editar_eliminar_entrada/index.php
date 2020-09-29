@@ -29,7 +29,7 @@ for($i=$cuenta_entradas_blog-1;$i>=0;$i--){
     $resultados .= "<input type='hidden' name='id_entrada' value='".$entrada_blog[$i]->id."'>"; //Le pasamos el id a editar
     $resultados .= "<input type='hidden' name='titulo_entrada' value='".$entrada_blog[$i]->titulo."'>"; //Le pasamos el titulo a editar
     $resultados .= "<input type='hidden' name='descripcion_entrada' value='".$entrada_blog[$i]->descripcion."'>"; //Le pasamos la descripcion a editar
-    $resultados .= "<input type='submit' name='editar_entrada' value='Edita esta entrada del blog'>";
+    $resultados .= "<input type='submit' name='editar_entrada_blog' value='Edita esta entrada del blog'>";
     $resultados .= "</form>";
 }
 ?>
