@@ -35,7 +35,7 @@ if( isset($_POST['eliminar_entrada'])){
             $doc->save('../xml/entradas_blog.xml');
 
             //Mostramos mensaje eliminado con exito
-            echo "<h1>Eliminado con exito!!</h1> <a href='index.php'><--Volver</a>";
+            echo "<h1>Eliminado con exito!!</h1> <a href='index.php'><<-Volver a editar/eliminar</a>";
 
             //Pasamos $seguir_buscando a false para detener el bucle
             $seguir_buscando = false;

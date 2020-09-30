@@ -41,7 +41,7 @@ if( isset($_POST['guardar_entrada'])){
                 $doc->save('../xml/entradas_blog.xml');
 
                 //Mostramos mensaje editado con exito
-                echo "<h1>Editado con exito!!</h1> <a href='index.php'><--Volver</a>";
+                echo "<h1>Editado con exito!!</h1> <a href='index.php'><<-Volver a editar/eliminar</a>";
 
                 //Pasamos $seguir_buscando a false para detener el bucle
                 $seguir_buscando = false;

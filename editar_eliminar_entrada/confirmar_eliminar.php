@@ -16,12 +16,12 @@ if( isset($_POST['confirmar_eliminar_entrada'])){
 </head>
 <body>
     <!--Preguntamos si quiere eliminar. En caso afirmativo lo eliminamos mandando por action el id de la entrada a eliminar_entrada.php-->
-    <h1>Estas seguro/a de que quieres eliminar la entrada: <?php echo $titulo; ?>? .Si la borras no la podras recuperar</h1>
+    <h1>Estas seguro/a de que quieres eliminar la entrada: <?php echo $titulo; ?>? Si la borras no la podras recuperar</h1>
     <form method='POST' action='eliminar_entrada.php'>
         <input type='hidden' name='id_entrada_eliminar' value='<?php echo $id; ?>'>
         <input type='submit' name='eliminar_entrada' value='Si'>
     </form>
     <br>
-    <a href="index.php"><<-Volver</a>
+    <a href="index.php"><<-Volver a editar/eliminar</a>
 </body>
 </html>

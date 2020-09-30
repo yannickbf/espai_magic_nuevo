@@ -2,14 +2,14 @@
     font-family: arial;
 }
 
-section, form {
+section, .anadir_entrada, .contenedor_entrada_editar {
     text-align: justify;
-    margin: 20px;
+    margin: 10px;
     background-color: rgb(72, 151, 151);
     display: inline-block;
     border-radius: 30px;
-    padding: 40px;
-    border: 3px dashed;
+    padding: 20px;
+    border: 3px dashed  rgb(8, 8, 20);
 }
 
 ul{
@@ -19,21 +19,32 @@ ul{
 
 form input, form textarea{
     width: 100%;
+    border-radius: 7px;
 }
 
 form textarea{
     height: 100px;
-    border-radius: 7px;
+}
+
+input[type=submit]{
+    background-color:  rgb(45, 99, 99);
+    border-color: rgb(22, 49, 49);
 }
 
 a{
     color: rgb(14, 14, 36);
     text-decoration: none;
-    font-size: 120%;
+    font-size: 100%;
 }
 
 h1{
+    color: rgb(10, 10, 26);
     margin-top: 0;
+    text-align: center;
+}
+
+.anadir_entrada h1{
+    text-align: justify;
 }
 
 .botones_volver_atras{
@@ -44,3 +55,17 @@ h1{
     border: 3px solid;
     border-radius: 30px;
 }
+
+.contenedor_entrada_blog{
+    border: 3px solid rgb(8, 8, 20);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgb(100, 179, 179);
+}
+
+.contenedor_entrada_editar{
+    min-width: 250px;
+}
+
+
