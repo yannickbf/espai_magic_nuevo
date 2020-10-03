@@ -2,7 +2,7 @@
     font-family: arial;
 }
 
-section, .anadir_entrada, .contenedor_entrada_editar {
+section, .anadir_entrada, .contenedor_entrada_editar, .contenedor_entrada_editar_anadir_imagen {
     text-align: justify;
     margin: 10px;
     background-color: rgb(72, 151, 151);
@@ -68,4 +68,7 @@ h1{
     min-width: 250px;
 }
 
-
+.contenedor_entrada_editar_anadir_imagen{
+    text-align: left;
+    width: 250px;
+}

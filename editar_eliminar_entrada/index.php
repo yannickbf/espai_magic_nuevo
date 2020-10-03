@@ -19,6 +19,12 @@ for($i=$cuenta_entradas_blog-1;$i>=0;$i--){
     $resultados .= "<h1>".$entrada_blog[$i]->titulo."</h1>";
     $resultados .= "<span>Fecha envio: ".$entrada_blog[$i]->fecha."</span>";
     $resultados .= "<p>".$entrada_blog[$i]->descripcion."</p><br>";
+    //El siguiente codigo es para mostrar las imagenes con boton de eliminar funcional
+    //Guardamos en una variable los nodos imagen de la entrada en la que nos encontramos
+    $nodos_img = $entrada_blog[$i]->getElementsByTagName('imagen');
+    $nodos
+    $entrada_a_eliminar = $entrada_blog[$i]->getElementsByTagName('imagen')->item($i);
+    $resultados .= "";
     //Creamos un form para eliminar una entrada, si le dan a eliminar pasaremos por metodo POST el id para que lo elimine del XML
     $resultados .= "<form method='POST' action='confirmar_eliminar.php'>";
     $resultados .= "<input type='hidden' name='id_entrada' value='".$entrada_blog[$i]->id."'>"; //Le pasamos el id a eliminar

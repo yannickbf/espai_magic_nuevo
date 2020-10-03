@@ -57,7 +57,7 @@
 
             //Preguntamos si quiere añadir imagen y si quiere le mandamos a la pagina para añadir pasandole el id
             echo "<h1>Quieres añadir alguna imagen a la entrada que acabas de publicar? Añadela aqui, si quieres añadir varias añade la primera, subela y añade otra, puedes añadir todas las que quieras. De lo contrario tu post ya esta publicado puedes volver al panel de administrácion, cerrar esta ventana, o lo que desés</h1>";
-            echo '<form action="upload.php" method="post" enctype="multipart/form-data" id="form_img">
+            echo '<form action="../upload.php" method="post" enctype="multipart/form-data" id="form_img">
             <span>Elegir archivo: </span><input type="file" name="fileToUpload" id="fileToUpload"> 
             <input type="hidden" name="id_entrada_imagen" value="'.$id_entrada_blog.'">
             <input type="submit" value="Subir imagen" name="submit"><br>

@@ -1,5 +1,5 @@
 <?php
-$target_dir = "../imagenes/"; //directorio en el que se subira
+$target_dir = "imagenes/"; //directorio en el que se subira
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);//se añade el directorio y el nombre del archivo
 $uploadOk = 1;//se añade un valor determinado en 1
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -40,7 +40,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 }
 //Comprueba si $ uploadOk se establece en 0 por un error
 if ($uploadOk == 0) {
-    echo "<font color='red'> Perdon, pero el archivo no se subio</font> <br><a href='../index.html'><<-Volver a el panel de control</a>";
+    echo "<font color='red'> Perdon, pero el archivo no se subio</font> <br><a href='index.html'><<-Volver a el panel de control</a>";
 // si todo está bien, intenta subir el archivo
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -50,7 +50,7 @@ if ($uploadOk == 0) {
         //Si se subio correctamente añadiremos un nodo <imagen> al XML de las entradas con el nombre del archivo
 
         //Cargamos el XML desde un archivo xml
-        $xml = simplexml_load_file('../xml/entradas_blog.xml');
+        $xml = simplexml_load_file('xml/entradas_blog.xml');
 
         //Guardamos en una variable los nodos entrada_blog para recorrer sus subnodos
         $entrada_blog = $xml->entrada_blog;
@@ -65,10 +65,10 @@ if ($uploadOk == 0) {
                 $anadir_img = $xml->entrada_blog[$i]->addChild('imagen',$_FILES["fileToUpload"]["name"]);
 
                 //Guardamos la nueva entrada en el arxivo XML
-                file_put_contents('../xml/entradas_blog.xml',$xml->asXML());
+                file_put_contents('xml/entradas_blog.xml',$xml->asXML());
 
                 //Mostramos mensaje diciendo que se ha añadido al XML correctamente
-                echo "<h1>Se ha guardado el nombre del archivo de la imagen en el XML!!</h1> <a href='../index.html'><<-Volver a el panel de control</a>";
+                echo "<h1>Se ha guardado el nombre del archivo de la imagen en el XML!!</h1> <a href='index.html'><<-Volver a el panel de control</a>";
 
                 //Pasamos $seguir_buscando a false para detener el bucle
                 $seguir_buscando = false;
