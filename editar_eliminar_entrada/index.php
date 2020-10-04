@@ -19,12 +19,28 @@ for($i=$cuenta_entradas_blog-1;$i>=0;$i--){
     $resultados .= "<h1>".$entrada_blog[$i]->titulo."</h1>";
     $resultados .= "<span>Fecha envio: ".$entrada_blog[$i]->fecha."</span>";
     $resultados .= "<p>".$entrada_blog[$i]->descripcion."</p><br>";
+
     //El siguiente codigo es para mostrar las imagenes con boton de eliminar funcional
     //Guardamos en una variable los nodos imagen de la entrada en la que nos encontramos
     $nodos_img = $entrada_blog[$i]->imagen;
-    $contar_nodos_img = $entrada_blog[$i]->imagen->length;
-    echo $nodos_img;
-    $resultados .= "";
+    //Contamos los nodos imagen para recorrerlos
+    $contar_nodos_img = $nodos_img->count();
+    //Si la entrada tiene imagen o imagenes las recorremos para mostrarlas
+    if($contar_nodos_img > 0){
+        //Guardaremos todas las imagenes de la entrada en un div
+        $resultados .= "<div class='contenedor_imgs'>";
+        //Recorremos los nodos img y gracias a su contenido montamos las imagenes en el html añaiendo el html a resultados
+        for($j=0; $j < $contar_nodos_img; $j++){
+            $resultados .= "<form method='POST' action='confirmar_eliminar_img.php'>";
+            $resultados .= "<input type='hidden' name='id_entrada' value='".$entrada_blog[$i]->id."'>";
+            $resultados .= "<input type='hidden' name='posicion_img' value='".$j."'>";
+            $resultados .= "<input type='submit' name='boton_eliminar_img' value='X' class='x_cerrar'>";
+            $resultados .= "<img src='../imagenes/".$nodos_img[$j]."' height='120px'>";
+            $resultados .= "</form>";
+        }
+        $resultados .= "</div><br>";
+    }
+    
     //Creamos un form para eliminar una entrada, si le dan a eliminar pasaremos por metodo POST el id para que lo elimine del XML
     $resultados .= "<form method='POST' action='confirmar_eliminar.php'>";
     $resultados .= "<input type='hidden' name='id_entrada' value='".$entrada_blog[$i]->id."'>"; //Le pasamos el id a eliminar

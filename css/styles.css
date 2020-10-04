@@ -72,3 +72,23 @@ h1{
     text-align: left;
     width: 250px;
 }
+
+.x_cerrar{
+    width: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    padding: 5px;  
+    margin: 5px;  
+    position: absolute;
+}
+
+.contenedor_imgs img{
+    margin-right: 5px;
+}
+
+.contenedor_imgs form{
+    display: inline-block;
+    position: relative;
+}
+
