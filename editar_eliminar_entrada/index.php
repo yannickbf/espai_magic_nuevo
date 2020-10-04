@@ -34,6 +34,7 @@ for($i=$cuenta_entradas_blog-1;$i>=0;$i--){
             $resultados .= "<form method='POST' action='confirmar_eliminar_img.php'>";
             $resultados .= "<input type='hidden' name='id_entrada' value='".$entrada_blog[$i]->id."'>";
             $resultados .= "<input type='hidden' name='posicion_img' value='".$j."'>";
+            $resultados .= "<input type='hidden' name='nombre_imagen' value='".$nodos_img[$j]."'>";
             $resultados .= "<input type='submit' name='boton_eliminar_img' value='X' class='x_cerrar'>";
             $resultados .= "<img src='../imagenes/".$nodos_img[$j]."' height='120px'>";
             $resultados .= "</form>";
